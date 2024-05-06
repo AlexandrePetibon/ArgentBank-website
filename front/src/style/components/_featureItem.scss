@@ -1,0 +1,29 @@
+.features {
+    display: flex; /* Affiche les enfants en ligne */
+    justify-content: space-between; /* Répartit les éléments avec un espacement égal entre eux */
+    align-items: center; /* Centre les éléments verticalement */
+    height: 100%; /* Assure que le conteneur occupe toute la hauteur disponible */
+}
+
+.feature-item {
+    flex: 1; /* Fait en sorte que chaque élément occupe le même espace */
+    padding: 2.5rem;
+    display: flex; /* Affiche les enfants en colonne */
+    flex-direction: column; /* Disposition verticale des enfants */
+    align-items: center; /* Centre les enfants horizontalement */
+    text-align: center; /* Centre le texte horizontalement */
+}
+
+.feature-icon {
+    width: 100px;
+    border: 10px solid #00bc77;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+.feature-item-title {
+    color: #222;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}

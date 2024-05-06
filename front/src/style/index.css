@@ -1,3 +1,4 @@
+@charset "UTF-8";
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7,6 +8,11 @@ footer {
           justify-content: center;
   border-top: 2px solid #ccc;
   padding: 2rem 0 1.5rem;
+}
+
+.footer-text {
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -101,6 +107,51 @@ header {
     font-size: 1.2rem;
   }
 }
+.features {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* Affiche les enfants en ligne */
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; /* Répartit les éléments avec un espacement égal entre eux */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* Centre les éléments verticalement */
+  height: 100%; /* Assure que le conteneur occupe toute la hauteur disponible */
+}
+
+.feature-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; /* Fait en sorte que chaque élément occupe le même espace */
+  padding: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* Affiche les enfants en colonne */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; /* Disposition verticale des enfants */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* Centre les enfants horizontalement */
+  text-align: center; /* Centre le texte horizontalement */
+}
+
+.feature-icon {
+  width: 100px;
+  border: 10px solid #00bc77;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.feature-item-title {
+  color: #222;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
 html {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
