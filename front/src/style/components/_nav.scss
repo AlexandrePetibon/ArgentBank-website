@@ -1,18 +1,32 @@
 header {
     display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 20px;
-}
-
-.logo {
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+  }
+  
+  .logo {
     display: flex;
     align-items: center;
     max-width: 100%;
     width: 200px;
-}
-
-.log {
+  }
+  
+  .log {
     text-decoration: none;
-  margin-right: 0.5rem;
-}
+    margin-right: 0.5rem;
+    color: inherit; /* Ajout de cette ligne pour hériter de la couleur du texte parent */
+  }
+  
+  .main-nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .main-nav a.router-link-exact-active {
+    color: #42b983;
+  }
+  
+  .main-nav-item:hover {
+    text-decoration: underline;
+  }

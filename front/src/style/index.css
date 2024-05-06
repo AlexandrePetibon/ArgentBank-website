@@ -42,6 +42,20 @@ header {
 .log {
   text-decoration: none;
   margin-right: 0.5rem;
+  color: inherit; /* Ajout de cette ligne pour hériter de la couleur du texte parent */
+}
+
+.main-nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.main-nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+.main-nav-item:hover {
+  text-decoration: underline;
 }
 
 .sr-only {
@@ -110,32 +124,32 @@ header {
 .features {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; /* Affiche les enfants en ligne */
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; /* Répartit les éléments avec un espacement égal entre eux */
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; /* Centre les éléments verticalement */
-  height: 100%; /* Assure que le conteneur occupe toute la hauteur disponible */
+          align-items: center;
+  height: 100%;
 }
 
 .feature-item {
   -webkit-box-flex: 1;
       -ms-flex: 1;
-          flex: 1; /* Fait en sorte que chaque élément occupe le même espace */
+          flex: 1;
   padding: 2.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; /* Affiche les enfants en colonne */
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; /* Disposition verticale des enfants */
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; /* Centre les enfants horizontalement */
-  text-align: center; /* Centre le texte horizontalement */
+          align-items: center;
+  text-align: center;
 }
 
 .feature-icon {

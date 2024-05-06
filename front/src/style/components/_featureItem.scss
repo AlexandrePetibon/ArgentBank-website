@@ -1,17 +1,17 @@
 .features {
-    display: flex; /* Affiche les enfants en ligne */
-    justify-content: space-between; /* Répartit les éléments avec un espacement égal entre eux */
-    align-items: center; /* Centre les éléments verticalement */
-    height: 100%; /* Assure que le conteneur occupe toute la hauteur disponible */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 
 .feature-item {
-    flex: 1; /* Fait en sorte que chaque élément occupe le même espace */
+    flex: 1;
     padding: 2.5rem;
-    display: flex; /* Affiche les enfants en colonne */
-    flex-direction: column; /* Disposition verticale des enfants */
-    align-items: center; /* Centre les enfants horizontalement */
-    text-align: center; /* Centre le texte horizontalement */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .feature-icon {
