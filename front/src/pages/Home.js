@@ -1,6 +1,4 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import Nav from '../components/Nav';
 import Banner from '../components/Banner';
 import Chat from '../img/icon-chat.png';
 import Money from '../img/icon-money.png';
@@ -10,7 +8,6 @@ import FeatureItem from '../components/FeatureItem';
 const Home = () => {
     return (
         <div>
-            <Nav />
             <Banner />
             <section className="features">
         <h2 className="sr-only">Features</h2>
@@ -33,7 +30,6 @@ const Home = () => {
           description="We use top of the line encryption to make sure your data and money is always safe."
         />
       </section>
-            <Footer />
         </div>
     );
 };

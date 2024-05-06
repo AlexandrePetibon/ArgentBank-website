@@ -5,10 +5,12 @@ import { NavLink } from "react-router-dom";
 const Nav = () => {
   return (
     <header>
-      <img className="logo" src={logo} alt="Logo Argent Bank" />
+      <NavLink to="/">
+        <img className="logo" src={logo} alt="Logo Argent Bank" />
+      </NavLink>
       <NavLink to="/sign-in" className="log">
-      <i className="fa fa-user-circle"></i>
-          Sign In
+        <i className="fa fa-user-circle"></i>
+        Sign In
       </NavLink>
     </header>
   );
