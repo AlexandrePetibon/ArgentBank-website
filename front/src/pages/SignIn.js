@@ -1,11 +1,33 @@
-import React from 'react';
-
+import React from "react";
 
 const SignIn = () => {
-    return (
-        <div>
-        </div>
-    );
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return (
+    <main className=" main bg-dark">
+      <section className="sign-in-content">
+        <i className="fa fa-user-circle sign-in-icon"></i>
+        <h1>Sign In</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="input-wrapper">
+            <label htmlFor="username">Username</label>
+            <input className="input" type="text" id="username" required />
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="password">Password</label>
+            <input className="input" type="password" id="password" required />
+          </div>
+          <div className="input-remember">
+            <input type="checkbox" id="remember-me" />
+            <label htmlFor="remember-me">Remember me</label>
+          </div>
+          <button type="submit" className="sign-in-button">Sign In</button>
+        </form>
+      </section>
+    </main>
+  );
 };
 
 export default SignIn;
