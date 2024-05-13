@@ -1,11 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './style/index.scss';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createRoot } from 'react-dom'; // Importation unique de createRoot
+import store from "./redux/store/store";
+import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-
+// Utilisation de createRoot pour rendre l'application
+createRoot(document.getElementById('root')).render(
+  <Provider store={store}>
     <App />
-
+  </Provider>
 );

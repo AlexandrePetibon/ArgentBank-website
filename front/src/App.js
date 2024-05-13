@@ -1,23 +1,28 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+import Layout from './components/Layout';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
-import Layout from './components/Layout';
 import NotFound from './components/NotFound';
+import Users from './pages/Users';
 
 const App = () => {
+  const token = useSelector(state => state.auth.token);
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/users" element={token ? <Users /> : <Navigate to="/sign-in" />} />
           <Route path="*" element={<NotFound />} /> 
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </Layout>
+    </Router>
   );
 };
 
 export default App;
-

@@ -1,32 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { setLogIn } from "../redux/reducers/userAuthSlice";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
-  const handleSubmit = (e) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const userCredentials = { email, password };
+    const resultAction = await dispatch(setLogIn(userCredentials));
+
+    if (!resultAction.error) {
+      remember
+        ? localStorage.setItem("email", email)
+        : localStorage.removeItem("email");
+
+      setEmail("");
+      setPassword("");
+      navigate("/users");
+    }
   };
 
   return (
-    <main className=" main bg-dark">
-      <section className="sign-in-content">
-        <i className="fa fa-user-circle sign-in-icon"></i>
-        <h1>Sign In</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="input-wrapper">
-            <label htmlFor="username">Username</label>
-            <input className="input" type="text" id="username" required />
-          </div>
-          <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
-            <input className="input" type="password" id="password" required />
-          </div>
-          <div className="input-remember">
-            <input type="checkbox" id="remember-me" />
-            <label htmlFor="remember-me">Remember me</label>
-          </div>
-          <button type="submit" className="sign-in-button">Sign In</button>
-        </form>
-      </section>
-    </main>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <label>
+          Remember me:
+          <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} />
+        </label>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
   );
 };
 
